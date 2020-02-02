@@ -36,7 +36,7 @@ public class UserService implements IUserService {
     @Override
     public User register(User user) throws UserAlreadyRegisteredException, SimplePasswordException {
 
-        if (user.getLogin().isEmpty()|| user.getPassword().isEmpty()) {
+        if (user.getLogin().isEmpty() || user.getPassword().isEmpty()) {
             throw new IllegalArgumentException("Ошибка в заполнении полей");
         }
         if (userRepository.findByLogin(user.getLogin()) != null) {
